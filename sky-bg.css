@@ -1,0 +1,179 @@
+/* ============ FinFlux Section Ambient Background ============ */
+/* Applied to all homepage sections EXCEPT the hero, which stays untouched. */
+
+.ff-sky-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep each section's real content above the ambient layer */
+.welcome-container,
+.why-container,
+.contact-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Glowing orbs ---- */
+.ff-sky-bg .ff-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: ffOrbFloat ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+.ff-sky-bg .ff-orb.blue {
+    background: radial-gradient(circle at 35% 35%, rgba(28, 155, 224, 0.5), rgba(28, 155, 224, 0) 70%);
+}
+
+.ff-sky-bg .ff-orb.orange {
+    background: radial-gradient(circle at 35% 35%, rgba(238, 109, 0, 0.4), rgba(238, 109, 0, 0) 70%);
+}
+
+@keyframes ffOrbFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translate(2.5%, -4%) scale(1.12);
+        opacity: 0.85;
+    }
+}
+
+/* ---- Drifting particles ---- */
+.ff-sky-bg .ff-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--blue-500);
+    box-shadow: 0 0 8px 1px rgba(28, 155, 224, 0.6);
+    animation: ffParticleRise ease-in-out infinite;
+}
+
+.ff-sky-bg .ff-particle.orange {
+    background: var(--orange-500);
+    box-shadow: 0 0 8px 1px rgba(238, 109, 0, 0.55);
+}
+
+@keyframes ffParticleRise {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.85;
+    }
+
+    88% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-70px) translateX(14px);
+        opacity: 0;
+    }
+}
+
+/* ---- Flight path lines (animated dashed curves) ---- */
+.ff-sky-bg .ff-flight-path {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.ff-sky-bg .ff-flight-path path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 3 12;
+    animation: ffDashFlow 22s linear infinite;
+}
+
+.ff-sky-bg .ff-flight-path .fp-1 {
+    stroke: var(--blue-500);
+    stroke-width: 1.4;
+    opacity: 0.32;
+}
+
+.ff-sky-bg .ff-flight-path .fp-2 {
+    stroke: var(--orange-500);
+    stroke-width: 1.2;
+    opacity: 0.22;
+    animation-duration: 28s;
+    animation-direction: reverse;
+}
+
+@keyframes ffDashFlow {
+    to {
+        stroke-dashoffset: -300;
+    }
+}
+
+/* ---- Small aviation-themed planes, tracing the flight paths ---- */
+.ff-sky-bg .ff-bg-plane {
+    position: absolute;
+    color: var(--blue-500);
+    opacity: 0.4;
+    filter: drop-shadow(0 0 5px rgba(28, 155, 224, 0.3));
+    animation: ffPlaneDrift linear infinite;
+}
+
+.ff-sky-bg .ff-bg-plane.orange {
+    color: var(--orange-500);
+    filter: drop-shadow(0 0 5px rgba(238, 109, 0, 0.25));
+}
+
+@keyframes ffPlaneDrift {
+    0% {
+        opacity: 0;
+        transform: translate(-6vw, 0) rotate(var(--ang, 20deg));
+    }
+
+    10% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(106vw, -8vh) rotate(var(--ang, 20deg));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ff-sky-bg .ff-orb,
+    .ff-sky-bg .ff-particle,
+    .ff-sky-bg .ff-bg-plane,
+    .ff-sky-bg .ff-flight-path path {
+        animation: none;
+    }
+
+    .ff-sky-bg .ff-bg-plane {
+        opacity: 0.18;
+    }
+}
+
+@media (max-width: 640px) {
+    .ff-sky-bg .ff-particle:nth-child(n+5) {
+        display: none;
+    }
+
+    .ff-sky-bg .ff-bg-plane:nth-child(n+3) {
+        display: none;
+    }
+}

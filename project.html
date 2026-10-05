@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | FinFlux </title>
+    <meta name="description"
+        content="FinFlux Group (Private) Limited — transportation, cargo solutions, aircraft spare parts, cross-border transactions, import services and manufacturing.">
+
+    <!-- Brand typography: Poppins for display, Inter for body (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="intro.css">
+
+    <!-- Tailwind CSS (utility classes power the Industry Insights background animation) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Keyframes driving the Industry Insights animated background.
+           Applied via Tailwind's arbitrary animate-[...] utilities. */
+        @keyframes ffParticleFloat {
+            0%   { transform: translateY(0) scale(0.7); opacity: 0; }
+            12%  { opacity: var(--p-op, 0.8); }
+            85%  { opacity: var(--p-op, 0.8); }
+            100% { transform: translateY(-150px) scale(1.15); opacity: 0; }
+        }
+        @keyframes ffShapeDrift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50%      { transform: translate(18px, -26px) rotate(10deg); }
+        }
+        @keyframes ffShapeDriftRev {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50%      { transform: translate(-22px, 20px) rotate(-8deg); }
+        }
+        @keyframes ffTrailSweep {
+            0%   { transform: translateX(-130%) translateY(0) rotate(-6deg); opacity: 0; }
+            12%  { opacity: 0.55; }
+            50%  { opacity: 0.55; }
+            100% { transform: translateX(230%) translateY(-40px) rotate(-6deg); opacity: 0; }
+        }
+        @keyframes ffIconDrift {
+            0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+            50%      { transform: translate(-24px, -30px) rotate(4deg); }
+        }
+        @keyframes ffRingPulse {
+            0%, 100% { transform: scale(1); opacity: 0.35; }
+            50%      { transform: scale(1.12); opacity: 0.6; }
+        }
+    </style>
+    <link rel="stylesheet" href="global-consistency.css">
+</head>
+
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="siteHeader">
+
+        <div class="logo">
+            <img src="logo.jpeg" alt="FinFlux Group Logo">
+            <h2>FinFlux </h2>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="project.html" class="active-link">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="contact.html" class="btn"><span class="btn-slide" data-label="Get In Touch">Get In Touch</span></a>
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</div>
+        </div>
+
+    </header>
+
+    <!-- ============ PROJECTS HERO (shared hero component) ============ -->
+    <section class="site-hero">
+
+        <div class="site-hero-bg-wrap">
+            <div class="hero-bg-slide slide-1"></div>
+            <div class="hero-bg-slide slide-2"></div>
+            <div class="hero-bg-slide slide-3"></div>
+        </div>
+        <div class="site-hero-overlay"></div>
+
+        <div class="site-hero-content">
+
+            <h1 data-reveal="up">Driving Innovation Across<br>
+                <span class="text-orange">Aviation</span> & Industry.</h1>
+
+            <div class="site-hero-underline" data-reveal="up"></div>
+
+            <p data-reveal="up" class="stagger-1">
+                Delivering reliable solutions through transportation, cargo,
+                aircraft spare parts, cross-border trade, imports, and
+                manufacturing with a commitment to quality and excellence.
+            </p>
+
+            <a href="#projects-grid" class="site-hero-btn stagger-2" data-reveal="up">
+                <span class="btn-slide" data-label="Discover More">Discover More</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="site-hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1536 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,150 C300,210 500,90 820,140 C1100,185 1300,110 1536,160" fill="none" stroke="rgba(0,129,204,0.18)" stroke-width="2"/>
+                <path d="M0,180 C280,230 520,150 800,185 C1080,220 1320,150 1536,195" fill="none" stroke="rgba(238,109,0,0.35)" stroke-width="2"/>
+                <path d="M0,205 C320,250 560,190 840,215 C1120,240 1340,190 1536,215" fill="none" stroke="rgba(0,129,204,0.12)" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="site-hero-divider">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,90 L0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,90 Z" fill="var(--bg)"></path>
+            </svg>
+        </div>
+
+    </section>
+    <!-- ============ LATEST INSIGHTS ============ -->
+    <section class="project-blogs">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-1.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <!-- Animated aviation/fintech background — decorative only -->
+        <div id="insightsBg" class="pointer-events-none absolute inset-0 overflow-hidden z-0" aria-hidden="true">
+
+            <!-- soft ambient glow orbs -->
+            <span class="absolute -top-24 -left-16 w-72 h-72 rounded-full bg-sky-400/20 blur-3xl"></span>
+            <span class="absolute -bottom-28 -right-20 w-80 h-80 rounded-full bg-orange-400/15 blur-3xl"></span>
+
+            <!-- flowing light trails -->
+            <span class="absolute top-[18%] left-0 w-2/3 h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent blur-[1px] animate-[ffTrailSweep_9s_ease-in-out_infinite]"></span>
+            <span class="absolute top-[55%] left-0 w-1/2 h-px bg-gradient-to-r from-transparent via-orange-400/50 to-transparent blur-[1px] animate-[ffTrailSweep_12s_ease-in-out_infinite] [animation-delay:-4s]"></span>
+            <span class="absolute top-[80%] left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent blur-[1px] animate-[ffTrailSweep_10s_ease-in-out_infinite] [animation-delay:-7s]"></span>
+
+            <!-- floating geometric shapes -->
+            <span class="hidden sm:block absolute top-[12%] right-[12%] w-16 h-16 rounded-2xl border border-sky-400/30 bg-sky-400/5 rotate-45 animate-[ffShapeDrift_8s_ease-in-out_infinite]"></span>
+            <span class="hidden sm:block absolute bottom-[16%] left-[8%] w-10 h-10 rounded-full border border-orange-400/35 bg-orange-400/5 animate-[ffShapeDriftRev_7s_ease-in-out_infinite]"></span>
+            <span class="hidden md:block absolute top-[45%] right-[28%] w-6 h-6 rounded-full border border-sky-300/40 animate-[ffRingPulse_5s_ease-in-out_infinite]"></span>
+            <span class="hidden md:block absolute top-[70%] right-[6%] w-24 h-24 rounded-full border border-sky-400/20 animate-[ffShapeDrift_11s_ease-in-out_infinite] [animation-delay:-3s]"></span>
+
+            <!-- aviation / fintech motifs -->
+            <i class="fa-solid fa-plane hidden sm:block absolute top-[22%] left-[20%] text-sky-400/15 text-4xl animate-[ffIconDrift_10s_ease-in-out_infinite]"></i>
+            <i class="fa-solid fa-chart-line hidden md:block absolute bottom-[20%] right-[22%] text-orange-400/15 text-3xl animate-[ffIconDrift_9s_ease-in-out_infinite] [animation-delay:-3.5s]"></i>
+            <i class="fa-solid fa-sack-dollar hidden lg:block absolute top-[62%] left-[14%] text-sky-300/15 text-2xl animate-[ffIconDrift_8s_ease-in-out_infinite] [animation-delay:-5s]"></i>
+            <i class="fa-solid fa-signal hidden lg:block absolute top-[10%] left-[48%] text-orange-300/15 text-xl animate-[ffIconDrift_7s_ease-in-out_infinite] [animation-delay:-2s]"></i>
+
+            <!-- glowing particles injected by insights-bg.js -->
+            <div id="insightsParticles" class="absolute inset-0"></div>
+        </div>
+
+
+        <div class="blogs-container">
+
+            <div class="blogs-heading">
+                <span>INDUSTRY INSIGHTS</span>
+                <h2>Latest Aviation & Business Articles</h2>
+                <p>
+                    Stay informed with our latest insights on aviation, logistics,
+                    international trade, and industrial innovation that shape the
+                    future of global business.
+                </p>
+            </div>
+
+            <div class="blogs-grid">
+
+                <!-- Blog 1 -->
+                <article class="blog-card">
+                    <img src="img1.jpeg" alt="Aviation Logistics">
+                    <div class="blog-content">
+                        <span class="blog-category">Aviation</span>
+                        <h3>How Modern Aviation Logistics Improve Global Supply Chains</h3>
+                        <p>
+                            Discover how efficient aviation logistics reduce delivery
+                            times, improve reliability, and connect businesses across
+                            international markets.
+                        </p>
+                        <a href="#transportation" class="blog-btn">
+                            <span class="btn-slide" data-label="Read More">Read More</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article class="blog-card">
+                    <img src="blog2.jpeg" alt="Aircraft Spare Parts">
+                    <div class="blog-content">
+                        <span class="blog-category">Aircraft Parts</span>
+                        <h3>Why Certified Aircraft Components Matter</h3>
+                        <p>
+                            Learn how certified spare parts improve aircraft safety,
+                            operational efficiency, and long-term performance for
+                            aviation businesses.
+                        </p>
+                        <a href="#spare-parts" class="blog-btn">
+                            <span class="btn-slide" data-label="Read More">Read More</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 3 -->
+                <article class="blog-card">
+                    <img src="blog3.jpeg" alt="International Trade">
+                    <div class="blog-content">
+                        <span class="blog-category">Global Trade</span>
+                        <h3>Cross-Border Trade Trends Every Business Should Know</h3>
+                        <p>
+                            Explore emerging trends in international trade, imports,
+                            logistics, and global procurement strategies.
+                        </p>
+                        <a href="#cross-border" class="blog-btn">
+                            <span class="btn-slide" data-label="Read More">Read More</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ============ PROJECTS GRID ============ -->
+    <section class="projects-section" id="projects-grid">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-2.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="bg-animation" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Premium aviation/fintech ambient background — decorative only -->
+        <div class="projects-atmosphere" aria-hidden="true">
+            <span class="prj-glow prj-glow-1"></span>
+            <span class="prj-glow prj-glow-2"></span>
+
+            <span class="prj-particle p1"></span>
+            <span class="prj-particle p2"></span>
+            <span class="prj-particle p3"></span>
+            <span class="prj-particle p4"></span>
+            <span class="prj-particle p5"></span>
+            <span class="prj-particle p6"></span>
+
+            <svg class="prj-route" viewBox="0 0 1000 400" preserveAspectRatio="none">
+                <path d="M1050,340 C800,240 600,360 350,200 C180,100 50,140 -50,80" />
+            </svg>
+            <i class="fa-solid fa-plane-departure prj-route-plane"></i>
+        </div>
+
+        <div class="projects-container">
+
+            <div class="projects-heading">
+
+                <span data-reveal="up">OUR EXPERTISE</span>
+
+                <h2 data-reveal="up" class="stagger-1">Explore Our Project Categories</h2>
+
+                <p data-reveal="up" class="stagger-2">
+                    Every project we deliver is built on precision, reliability, and a deep
+                    understanding of global aviation and industrial trade — from the runway
+                    to the warehouse floor.
+                </p>
+
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Transportation -->
+                <a href="#transportation" class="project-link">
+                    <div class="project-card" data-reveal="up">
+                        <i class="fa-solid fa-plane-departure"></i>
+                        <h3>Transportation</h3>
+                        <p>Reliable aviation transportation solutions connecting businesses across global markets.</p>
+                    </div>
+                </a>
+
+                <!-- Cargo -->
+                <a href="#cargo" class="project-link">
+                    <div class="project-card stagger-1" data-reveal="up">
+                        <i class="fa-solid fa-box"></i>
+                        <h3>Cargo Solutions</h3>
+                        <p>Efficient cargo handling and logistics services for safe and timely delivery.</p>
+                    </div>
+                </a>
+
+                <!-- Spare Parts -->
+                <a href="#spare-parts" class="project-link">
+                    <div class="project-card stagger-2" data-reveal="up">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3>Aircraft Spare Parts</h3>
+                        <p>Supplying high-quality aircraft spare parts that meet international standards.</p>
+                    </div>
+                </a>
+
+                <!-- Cross Border -->
+                <a href="#cross-border" class="project-link">
+                    <div class="project-card" data-reveal="up">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Cross-Border Transactions</h3>
+                        <p>Supporting seamless international trade and business operations across borders.</p>
+                    </div>
+                </a>
+
+                <!-- Imports -->
+                <a href="#imports" class="project-link">
+                    <div class="project-card stagger-1" data-reveal="up">
+                        <i class="fa-solid fa-ship"></i>
+                        <h3>Import Services</h3>
+                        <p>Professional import management and global procurement solutions.</p>
+                    </div>
+                </a>
+
+                <!-- Manufacturing -->
+                <a href="#manufacturing" class="project-link">
+                    <div class="project-card stagger-2" data-reveal="up">
+                        <i class="fa-solid fa-industry"></i>
+                        <h3>Manufacturing</h3>
+                        <p>Delivering precision manufacturing solutions with quality, efficiency, and innovation.</p>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ TRANSPORTATION ============ -->
+    <section class="service-detail-section" id="transportation">
+
+       
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-content" data-reveal="left">
+
+                <span class="service-tag">TRANSPORTATION</span>
+
+                <h2>Reliable Aviation Transportation Solutions</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux provides reliable transportation services that
+                    support the aviation industry through efficient cargo movement,
+                    secure logistics, and dependable operational planning. Our
+                    transportation solutions are designed to ensure timely delivery,
+                    safety, and seamless coordination across domestic and
+                    international routes.
+                </p>
+
+                <p>
+                    We work closely with airlines, logistics providers, and business
+                    partners to deliver transportation solutions that improve supply
+                    chain performance, reduce delays, and maintain the highest
+                    standards of operational excellence.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Air Cargo Transportation</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Domestic &amp; International
+                            Logistics</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Freight Coordination</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Supply Chain Management</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>On-Time Delivery Solutions</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Safe &amp; Secure Transportation</span>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Transportation Service">Request Transportation Service</span></a>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-image" data-reveal="right">
+                <img src="img6.jpg" alt="Transportation Service">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ CARGO SOLUTIONS ============ -->
+    <section class="service-detail-section" id="cargo">
+
+       
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-image" data-reveal="left">
+                <img src="img1.jpeg" alt="Cargo Solutions">
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-content" data-reveal="right">
+
+                <span class="service-tag">CARGO SOLUTIONS</span>
+
+                <h2>Efficient Air Cargo &amp; Logistics Services</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux provides dependable cargo solutions designed to
+                    support businesses with secure, timely, and efficient freight
+                    movement. Our services ensure that shipments are handled with
+                    precision while maintaining the highest standards of safety and
+                    operational excellence.
+                </p>
+
+                <p>
+                    From domestic deliveries to international air cargo operations,
+                    we work with trusted logistics partners to ensure seamless
+                    transportation, accurate tracking, and reliable delivery across
+                    regional and global markets.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Air Cargo Services</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Freight Handling</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Warehouse Coordination</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Shipment Tracking</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Secure Cargo Management</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>International Freight Solutions</span>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Cargo Service">Request Cargo Service</span></a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ AIRCRAFT SPARE PARTS ============ -->
+    <section class="service-detail-section" id="spare-parts">
+
+       
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-content" data-reveal="left">
+
+                <span class="service-tag">AIRCRAFT SPARE PARTS</span>
+
+                <h2>Reliable Aircraft Components &amp; Spare Parts Supply</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux specializes in the sourcing and supply of
+                    high-quality aircraft spare parts and aviation components.
+                    We provide dependable solutions that support aircraft
+                    maintenance, operational efficiency, and long-term
+                    performance while meeting international aviation standards.
+                </p>
+
+                <p>
+                    Through our trusted supplier network, we ensure timely
+                    delivery of certified aircraft parts, helping airlines,
+                    maintenance organizations, and aviation businesses maintain
+                    safe and uninterrupted operations across regional and
+                    international markets.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Certified Aircraft Spare Parts</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Aircraft Components &amp;
+                            Accessories</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Engine &amp; Mechanical Parts</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Global Parts Procurement</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Quality Inspection &amp;
+                            Assurance</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Fast &amp; Secure Worldwide
+                            Delivery</span></div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Spare Parts">Request Spare Parts</span></a>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-image" data-reveal="right">
+                <img src="img8.jpg" alt="Aircraft Spare Parts">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ CROSS-BORDER TRANSACTIONS ============ -->
+    <section class="service-detail-section" id="cross-border">
+
+        
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-image" data-reveal="left">
+                <img src="img9.jpg" alt="Cross-Border Transactions">
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-content" data-reveal="right">
+
+                <span class="service-tag">CROSS-BORDER TRANSACTIONS</span>
+
+                <h2>Seamless International Trade &amp; Business Solutions</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux facilitates efficient cross-border transactions,
+                    enabling businesses to expand into international markets with
+                    confidence. Our expertise ensures smooth coordination between
+                    suppliers, logistics partners, and global trade networks while
+                    maintaining compliance with international trade requirements.
+                </p>
+
+                <p>
+                    We support organizations by simplifying international business
+                    operations, improving trade efficiency, and ensuring reliable
+                    movement of goods across borders through trusted partnerships
+                    and streamlined processes.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>International Trade Support</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Cross-Border Logistics</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Trade Documentation</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Customs Coordination</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Global Business Partnerships</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Efficient Supply Chain Support</span>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Cross-Border Services">Request Cross-Border Services</span></a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ IMPORT SERVICES ============ -->
+    <section class="service-detail-section" id="imports">
+
+       
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-content" data-reveal="left">
+
+                <span class="service-tag">IMPORT SERVICES</span>
+
+                <h2>Reliable Global Import &amp; Procurement Solutions</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux provides comprehensive import services that help
+                    businesses source products and aviation-related materials from
+                    international markets. We ensure every shipment is handled with
+                    efficiency, accuracy, and compliance with global trade standards.
+                </p>
+
+                <p>
+                    From supplier coordination and customs documentation to freight
+                    management and final delivery, our experienced team manages every
+                    stage of the import process. Our goal is to simplify international
+                    procurement while ensuring timely and cost-effective solutions for
+                    our clients.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>International Import Management</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Supplier &amp; Vendor
+                            Coordination</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Customs Documentation</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Freight &amp; Shipping
+                            Coordination</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Global Procurement Solutions</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Safe &amp; Timely Delivery</span></div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Import Services">Request Import Services</span></a>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-image" data-reveal="right">
+                <img src="img10.jpg" alt="Import Services">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ MANUFACTURING ============ -->
+    <section class="service-detail-section" id="manufacturing">
+
+      
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="service-detail-container">
+
+            <!-- Left Side -->
+            <div class="service-detail-image" data-reveal="left">
+                <img src="img11.jpg" alt="Manufacturing Services">
+            </div>
+
+            <!-- Right Side -->
+            <div class="service-detail-content" data-reveal="right">
+
+                <span class="service-tag">MANUFACTURING</span>
+
+                <h2>Precision Manufacturing for Aviation &amp; Industry</h2>
+
+                <div class="service-line"></div>
+
+                <p>
+                    FinFlux delivers advanced manufacturing solutions that
+                    support the aviation and industrial sectors. We focus on
+                    precision, quality, and innovation to produce reliable
+                    components that meet international standards and customer
+                    requirements.
+                </p>
+
+                <p>
+                    Through modern production processes and strict quality control,
+                    we manufacture high-performance products that enhance
+                    operational efficiency and ensure long-term reliability.
+                    Our commitment to continuous improvement enables us to deliver
+                    dependable manufacturing solutions for clients worldwide.
+                </p>
+
+                <div class="service-features">
+
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Industrial Manufacturing</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Precision Engineering</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Component Production</span></div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Quality Control &amp; Testing</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Custom Manufacturing Solutions</span>
+                    </div>
+                    <div class="feature"><i class="fa-solid fa-check"></i><span>Efficient Production Management</span>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="service-btn"><span class="btn-slide" data-label="Request Manufacturing Services">Request Manufacturing Services</span></a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-section">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-1.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--navy"></div>
+
+        <svg class="cta-path" viewBox="0 0 1200 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-50,320 C250,200 450,380 750,220 C950,110 1050,260 1250,140" fill="none"
+                stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="2 10" stroke-linecap="round" />
+        </svg>
+
+        <div class="cta-container">
+
+            <span class="cta-tag" data-reveal="up"><i class="fa-solid fa-plane-departure"></i> LET'S FLY TOGETHER</span>
+
+            <h2 data-reveal="up" class="stagger-1">Have a Project in Mind?</h2>
+
+            <p data-reveal="up" class="stagger-2">
+                Whatever your aviation or industrial requirement, our team is ready
+                to build a reliable, efficient solution around it. Let's talk about
+                what you need next.
+            </p>
+
+            <a href="contact.html" class="cta-btn stagger-3" data-reveal="up">
+                <i class="fa-solid fa-paper-plane"></i> <span class="btn-slide" data-label="Contact Us">Contact Us</span>
+            </a>
+
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/920000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============ FOOTER ============ -->
+
+
+<footer class="footer">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-4.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--navy"></div>
+
+        <div class="footer-container">
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h2 class="footer-logo">FinFlux</h2>
+                <p>
+                    A trusted aviation partner delivering innovative aviation solutions, operational excellence, and
+                    strategic support across global markets, connecting businesses through safe, efficient, and reliable
+                    services.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="service.html#transportation">Transportation</a></li>
+                    <li><a href="service.html#cargo">Cargo Solutions</a></li>
+                    <li><a href="service.html#spare-parts">Aircraft Spare Parts</a></li>
+                    <li><a href="service.html#cross-border">Cross-Border Transactions</a></li>
+                    <li><a href="service.html#imports">Import Services</a></li>
+                    <li><a href="service.html#manufacturing">Manufacturing</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 FinFlux. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- Fixed decorative flight-path scroll indicator (see index.js) -->
+    <div class="flight-track" id="flightTrack" aria-hidden="true">
+        <div class="rail"></div>
+        <div class="plane-marker"><i class="fa-solid fa-location-arrow"></i></div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="insights-bg.js"></script>
+
+    <script src="hero-bg-rotator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+/* =========================================================================
+   FINFLUX DESIGN SYSTEM — CENTRAL TOKENS
+   Loaded FIRST on every page, before any page-specific stylesheet.
+   This is the single source of truth for color, typography, spacing,
+   radius, shadow and button dimensions. Change a value here and it
+   updates across the entire site (every page CSS + global-consistency.css
+   reference these custom properties instead of hardcoded values).
+
+   NOTE: each page CSS file (index.css/about.css/service.css/project.css/
+   contact.css) still carries its own legacy :root block with the same
+   brand color values for backward compatibility — those values are
+   identical to the ones below, so nothing conflicts. Any NEW token
+   (spacing, radius, shadow, button sizing, icon sizing) lives ONLY here.
+   ========================================================================= */
+
+:root {
+    /* ---------- Brand colors (source of truth) ---------- */
+    --blue-700: #005b95;
+    --blue-600: #0081cc;
+    --blue-500: #1c9be0;
+    --blue-400: #57b8ec;
+    --blue-100: #e6f4fd;
+
+    --orange-600: #cc5900;
+    --orange-500: #ee6d00;
+    --orange-400: #ff8f3d;
+    --orange-100: #fff1e5;
+
+    --navy-900: #061423;
+    --navy-800: #0a2038;
+    --navy-700: #0f2c4c;
+
+    --ink: #0b1f33;
+    --ink-soft: #4a5a6b;
+    --ink-faint: #7c8a9a;
+
+    --bg: #f6f9fc;
+    --bg-alt: #eef5fb;
+    --white: #ffffff;
+
+    --border-soft: rgba(11, 32, 54, 0.08);
+    --border-soft-2: rgba(11, 32, 54, 0.12);
+
+    --brand-gradient: linear-gradient(120deg, var(--blue-600) 0%, var(--blue-500) 45%, var(--orange-500) 100%);
+    --brand-gradient-soft: linear-gradient(135deg, rgba(0, 129, 204, 0.10), rgba(238, 109, 0, 0.10));
+
+    /* ---------- Typography scale ---------- */
+    --font-display: 'Poppins', 'Inter', sans-serif;
+    --font-body: 'Inter', 'Poppins', sans-serif;
+
+    --fs-label: 13.5px;      /* small eyebrow labels above headings */
+    --ls-label: 0.22em;      /* letter-spacing for eyebrow labels */
+    --fw-label: 700;
+
+    --fs-h1: clamp(2.4rem, 4.2vw, 3.6rem);
+    --fs-h2: clamp(1.9rem, 3vw, 2.6rem);
+    --fs-h3: clamp(1.35rem, 1.8vw, 1.7rem);
+    --fs-h4: clamp(1.05rem, 1.3vw, 1.2rem);
+
+    /* ---------- Spacing scale ---------- */
+    --space-2xs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 32px;
+    --space-xl: 56px;
+    --space-2xl: 90px;
+
+    /* ---------- Radius scale ---------- */
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --radius-pill: 999px;
+    --radius-circle: 50%;
+
+    /* ---------- Shadow scale ---------- */
+    --shadow-sm: 0 6px 16px rgba(11, 32, 54, 0.10);
+    --shadow-md: 0 10px 24px rgba(11, 32, 54, 0.14);
+    --shadow-lg: 0 20px 42px rgba(10, 32, 56, 0.22);
+    --shadow-brand: 0 10px 22px rgba(0, 129, 204, 0.25);
+
+    /* ---------- Button system ---------- */
+    --btn-padding-y: 0.85rem;
+    --btn-padding-x: 1.9rem;
+    --btn-radius: var(--radius-pill);
+    --btn-font-size: 0.95rem;
+    --btn-font-weight: 600;
+    --btn-letter-spacing: 0.01em;
+    --btn-bg: var(--brand-gradient);
+    --btn-color: #ffffff;
+    --btn-shadow: 0 8px 20px rgba(11, 32, 54, 0.14);
+    --btn-shadow-hover: 0 12px 26px rgba(11, 32, 54, 0.22);
+    --btn-slide-duration: 0.4s;
+
+    /* ---------- Icon badge system (Our Journey icon = reference) ---------- */
+    --icon-size: 64px;
+    --icon-bg: var(--white);
+    --icon-border: 2px solid var(--orange-500);
+    --icon-color: var(--blue-700);
+    --icon-font-size: 24px;
+
+    /* ---------- Motion ---------- */
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --dur: .6s;
+
+    /* ---------- Layout ---------- */
+    --header-h: 88px;
+    --container: 1360px;
+}

@@ -1,0 +1,565 @@
+/* =========================================================================
+   GLOBAL CONSISTENCY LAYER — FinFlux
+   Loaded LAST on every page. Consumes the tokens defined in
+   design-tokens.css to unify heading typography, eyebrow labels, icon
+   badges, buttons (incl. the text-slide-up hover animation), the
+   Passenger/Cargo toggle, header/nav readability, the chatbot header,
+   the Global Aviation Network section, and the worldwide airport search
+   dropdown — across every page, using one shared set of rules instead
+   of five separate near-duplicates.
+   ========================================================================= */
+
+/* ---------- 1. PAGE BACKGROUND — light, clean, elegant ---------- */
+html, body {
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg) 40%, #ffffff 100%) !important;
+    background-attachment: fixed !important;
+}
+
+section:not(.footer):not([class*="hero"]):not([class*="cta"]) {
+    background-color: transparent;
+}
+
+/* ---------- 2. HEADINGS — one consistent hierarchy everywhere ---------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.15 !important;
+    color: var(--ink) !important;
+    margin-top: 0;
+}
+
+h1 { font-size: var(--fs-h1) !important; margin-bottom: 1.1rem !important; }
+h2 { font-size: var(--fs-h2) !important; margin-bottom: 0.9rem !important; }
+h3 { font-size: var(--fs-h3) !important; margin-bottom: 0.7rem !important; font-weight: 600 !important; }
+h4 { font-size: var(--fs-h4) !important; margin-bottom: 0.55rem !important; font-weight: 600 !important; }
+
+/* Accent words inside headings (JOURNEY, Our Success, etc.) keep their
+   brand color — this runs after the blanket h1-h6 rule above so the
+   accent still wins over the flat ink color. */
+.text-orange { color: var(--orange-500) !important; }
+.text-blue { color: var(--blue-600) !important; }
+
+/* Headings on dark surfaces stay light for contrast: footer, CTA bands,
+   the "GLOBAL AVIATION NETWORK" panel, the flipped Our Values cards,
+   and the FinFlux Assistant widget header. */
+.footer h1, .footer h2, .footer h3, .footer h4,
+[class*="cta-section"] h1, [class*="cta-section"] h2, [class*="cta-section"] h3,
+.locations-heading h2, .locations-heading h3,
+.value-card-back h3, .value-card-back h4,
+.ff-chat-header h1, .ff-chat-header h2, .ff-chat-header h3,
+.footer-logo {
+    color: #ffffff !important;
+}
+
+.site-hero-content h1 {
+    color: var(--navy-800) !important;
+}
+
+/* ---------- 3. EYEBROW LABELS — identical everywhere ----------
+   .subtitle / .section-subtitle / .contact-subtitle / .mission-tag /
+   .history-tag / .section-tag / .service-tag all fill the same role
+   (small caps label sitting above a heading) but previously shipped
+   with different font-size, weight and letter-spacing. Unified here,
+   including the small dash accent, so every page uses one label style. */
+.subtitle, .section-subtitle, .contact-subtitle,
+.mission-tag, .history-tag, .section-tag, .service-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-xs) !important;
+    color: var(--blue-600) !important;
+    font-family: var(--font-body) !important;
+    font-size: var(--fs-label) !important;
+    font-weight: var(--fw-label) !important;
+    letter-spacing: var(--ls-label) !important;
+    text-transform: uppercase !important;
+    margin-bottom: var(--space-sm) !important;
+}
+
+.subtitle::before, .section-subtitle::before, .contact-subtitle::before,
+.mission-tag::before, .history-tag::before, .section-tag::before, .service-tag::before {
+    content: "" !important;
+    width: 26px !important;
+    height: 2px !important;
+    background: var(--orange-500) !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+}
+
+/* Labels sitting on the dark Global Aviation Network band get a lighter
+   accent color so they stay legible on navy. */
+.locations-heading span {
+    color: var(--blue-400) !important;
+}
+.locations-heading span::before {
+    background: var(--orange-400) !important;
+}
+
+/* ---------- 4. BODY TEXT — strong, readable, dark-on-light ---------- */
+body, p, li, span, label, a {
+    color: var(--ink);
+}
+
+p { color: var(--ink-soft) !important; }
+
+.footer p, .footer li, .footer span, .footer a,
+[class*="cta-section"] p, [class*="cta-section"] span,
+.locations-heading p, .location-info h3,
+.value-card-back p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.site-hero-content p {
+    color: var(--ink-soft) !important;
+}
+
+/* ---------- 5. ICONS — unified on the "Our Journey" circular style ----------
+   .journey-icon is the reference. .icon / .contact-icon / .mission-box-icon /
+   .values-footer-icon previously used a gradient-filled rounded-square
+   look; brought in line here. Also unified: Our Values (value-card),
+   Our Vision (ov-item), the Our Mission category row (mission-cat-item),
+   Our Expertise on the Projects page (project-card), and the Services
+   page (category-card) — these previously used bare icons or a blue
+   gradient-filled circle instead of the shared orange-ring badge.
+   Direct-child combinators are used where needed so nested/decorative
+   icons (flip-hint arrows, checkmarks) are left untouched. WhatsApp
+   (.ff-whatsapp-btn) and the Chatbot launcher (.ff-chat-btn /
+   .ff-support-btn) are deliberately excluded — they keep WhatsApp green
+   and the chatbot's own brand color. */
+.journey-icon,
+.icon, .contact-icon, .mission-box-icon, .values-footer-icon,
+.value-card-front > i, .value-card-back > i,
+.ov-item > i,
+.mission-cat-item > i,
+.project-card > i,
+.category-card > i {
+    width: var(--icon-size) !important;
+    height: var(--icon-size) !important;
+    border-radius: var(--radius-circle) !important;
+    background: var(--icon-bg) !important;
+    border: var(--icon-border) !important;
+    color: var(--icon-color) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: var(--icon-font-size) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: transform .35s var(--ease) !important;
+    flex-shrink: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* .contact-icon sits beside its text in a left-aligned flex row (icon +
+   heading/email), not centered alone in a column like the other icons
+   above — the shared auto side-margins were pulling it away from its
+   label and opening a large gap before the email/phone/address text. */
+.contact-card .contact-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.icon i, .contact-icon i, .mission-box-icon i, .values-footer-icon i, .journey-icon i {
+    color: var(--icon-color) !important;
+    font-size: var(--icon-font-size) !important;
+}
+
+.feature-card:hover .icon,
+.contact-card:hover .contact-icon,
+.journey-card:hover .journey-icon,
+.value-card:hover .value-card-front > i,
+.ov-item:hover > i,
+.mission-cat-item:hover > i,
+.project-card:hover > i,
+.category-card:hover > i {
+    transform: translateY(-4px) scale(1.05) !important;
+    border-color: var(--blue-500) !important;
+}
+
+/* ---------- 6. BUTTONS — one consistent premium design ----------
+   NOTE: .ff-whatsapp-btn, .ff-chat-btn, .ff-support-btn and .ff-send-btn
+   are excluded — they are the circular WhatsApp/chatbot launcher and the
+   in-widget send button, which keep their own purpose-built circular
+   styling and brand colors. .inquiry-toggle-btn is excluded too: it is
+   one half of the sliding-pill Passenger/Cargo toggle (see section 7),
+   not a standalone button. */
+.btn, .cta-btn, .primary-btn, .why-btn, .blog-btn,
+.service-btn, .send-btn,
+a[class*="-btn"]:not(.ff-whatsapp-btn):not(.ff-chat-btn):not(.ff-support-btn):not(.ff-send-btn):not(.inquiry-toggle-btn),
+button[class*="-btn"]:not(.ff-whatsapp-btn):not(.ff-chat-btn):not(.ff-support-btn):not(.ff-send-btn):not(.inquiry-toggle-btn) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: var(--btn-padding-y) var(--btn-padding-x) !important;
+    font-family: var(--font-body) !important;
+    font-size: var(--btn-font-size) !important;
+    font-weight: var(--btn-font-weight) !important;
+    letter-spacing: var(--btn-letter-spacing) !important;
+    border-radius: var(--btn-radius) !important;
+    border: 1.5px solid transparent !important;
+    background: var(--btn-bg) !important;
+    color: var(--btn-color) !important;
+    box-shadow: var(--btn-shadow) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), opacity 0.25s ease !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.btn:hover, .cta-btn:hover, .primary-btn:hover,
+.why-btn:hover, .blog-btn:hover, .service-btn:hover, .send-btn:hover,
+a[class*="-btn"]:not(.ff-whatsapp-btn):not(.ff-chat-btn):not(.ff-support-btn):not(.ff-send-btn):not(.inquiry-toggle-btn):hover,
+button[class*="-btn"]:not(.ff-whatsapp-btn):not(.ff-chat-btn):not(.ff-support-btn):not(.ff-send-btn):not(.inquiry-toggle-btn):hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--btn-shadow-hover) !important;
+    opacity: 0.96;
+}
+
+.btn.secondary, .btn.outline, .btn-outline, .btn.ghost {
+    background: #ffffff !important;
+    color: var(--blue-700) !important;
+    border: 1.5px solid var(--border-soft-2) !important;
+    box-shadow: none !important;
+}
+
+/* ---------- 6c. INQUIRE NOW BUTTON — align to the primary button system ----------
+   .inquiry-submit shares the same padding, radius, typography and shadow
+   tokens as "Get In Touch" (.btn/.why-btn/.cta-btn). Unlike those buttons
+   (which slide a 200%-wide gradient across on hover, so the resting state
+   only shows one half of --brand-gradient), this button shows the full
+   blue-to-orange blend at rest — background-size is 100%, not 200%, so
+   there's no strip to slide. Hover keeps that exact same gradient and
+   only brightens it slightly with a soft blue+orange glow, instead of
+   shifting to a different-looking color. */
+.inquiry-submit {
+    padding: var(--btn-padding-y) var(--btn-padding-x) !important;
+    font-family: var(--font-body) !important;
+    font-size: var(--btn-font-size) !important;
+    font-weight: var(--btn-font-weight) !important;
+    letter-spacing: var(--btn-letter-spacing) !important;
+    border-radius: var(--btn-radius) !important;
+    border: 1.5px solid transparent !important;
+    background: var(--brand-gradient) !important;
+    background-size: 100% auto !important;
+    color: var(--btn-color) !important;
+    box-shadow: var(--btn-shadow) !important;
+    transition: filter 0.3s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease) !important;
+}
+
+.inquiry-submit:hover {
+    filter: brightness(1.1) saturate(1.08) !important;
+    transform: translateY(-2px) !important;
+    box-shadow:
+        var(--btn-shadow-hover),
+        0 0 22px rgba(28, 155, 224, .35),
+        0 0 22px rgba(238, 109, 0, .3) !important;
+
+}
+
+.btn.secondary:hover, .btn.outline:hover, .btn-outline:hover, .btn.ghost:hover {
+    border-color: var(--blue-500) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* ---------- 6b. BUTTON TEXT-SLIDE-UP HOVER ANIMATION ----------
+   Applies the header button's slide animation to every primary button
+   (Hero "Discover More", "Inquire Now", "Contact Us", "Send Inquiry",
+   service/blog links, etc). Each label is wrapped in
+   <span class="btn-slide" data-label="same text">text</span>.
+   .btn-slide is a fixed-height, clipped "viewport" (never itself moves);
+   two independent pseudo-elements carry the visible label — ::before
+   sits at rest, ::after starts one line below — and swap places on
+   hover. The real text node stays in the DOM (for accessibility) but is
+   painted transparent, since the pseudo-elements render the visible
+   copies; its size still reserves the button's natural width/height. */
+.btn-slide {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 1.3em;
+    line-height: 1.3em;
+    vertical-align: middle;
+    color: transparent !important;
+}
+
+.btn-slide::before,
+.btn-slide::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    transition: transform var(--btn-slide-duration) var(--ease);
+}
+
+.btn-slide::before {
+    transform: translateY(0%);
+}
+
+.btn-slide::after {
+    transform: translateY(100%);
+}
+
+a:hover .btn-slide::before,
+button:hover .btn-slide::before {
+    transform: translateY(-100%);
+}
+
+a:hover .btn-slide::after,
+button:hover .btn-slide::after {
+    transform: translateY(0%);
+}
+
+/* On the outline-style hero/secondary buttons the label color is dark,
+   not white — keep the slide pseudo-elements matching. */
+.site-hero-btn .btn-slide::before,
+.site-hero-btn .btn-slide::after,
+.btn.secondary .btn-slide::before, .btn.secondary .btn-slide::after,
+.btn.outline .btn-slide::before, .btn.outline .btn-slide::after,
+.btn-outline .btn-slide::before, .btn-outline .btn-slide::after,
+.btn.ghost .btn-slide::before, .btn.ghost .btn-slide::after {
+    color: var(--navy-800);
+}
+
+.site-hero-btn:hover .btn-slide::before,
+.site-hero-btn:hover .btn-slide::after {
+    color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-slide::before, .btn-slide::after {
+        transition: none;
+    }
+}
+
+/* ---------- 7b. RESPONSIVE — OUR VISION ICONS (tablet & mobile) ----------
+   The unified circular icon (section 5) is centered with side auto-margins,
+   which works for a full-width standalone badge but reads as distorted next
+   to the ov-item's heading/paragraph once about.css centers that whole card
+   below 992px (see about.css). These rules bring the icon's own size and
+   spacing in line with that centered layout — smaller, evenly spaced, never
+   stretched — on tablet and mobile. Desktop (>992px) is untouched. */
+@media (max-width: 992px) {
+    .ov-item > i {
+        width: 54px !important;
+        height: 54px !important;
+        font-size: 19px !important;
+        margin: 0 0 14px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .ov-item > i {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 17px !important;
+        margin: 0 0 12px !important;
+    }
+}
+
+/* ---------- 7. PASSENGER / CARGO TOGGLE — clear active state ---------- */
+.inquiry-toggle-btn {
+    font-weight: 600 !important;
+}
+
+.inquiry-toggle-btn.active {
+    color: #ffffff !important;
+}
+
+.inquiry-toggle-btn:not(.active) {
+    color: var(--ink-soft) !important;
+}
+
+.inquiry-toggle-btn:not(.active):hover {
+    color: var(--navy-800) !important;
+}
+
+/* ---------- 8. HEADER / NAVIGATION — darker, always readable ----------
+   The header sits on a bright hero photo before scrolling, so its
+   translucent background is pushed darker/more opaque here so the
+   white nav text reads clearly at all times, not just once scrolled. */
+.header {
+    background: rgba(4, 10, 19, 0.9) !important;
+}
+
+.header.scrolled {
+    background: rgba(4, 10, 19, 0.97) !important;
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a:hover,
+.navbar a.active-link {
+    color: #ffffff !important;
+}
+
+/* ---------- 9. HERO BUTTON — matches the unified button design ---------- */
+.site-hero-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--btn-shadow-hover) !important;
+}
+
+/* ---------- 10. GLOBAL AVIATION NETWORK — proper contrast on navy ---------- */
+.locations-section {
+    background: var(--navy-900) !important;
+}
+
+.locations-heading h2 {
+    color: #ffffff !important;
+}
+
+.locations-heading p {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.location-info h3 {
+    color: #ffffff !important;
+}
+
+.location-info p {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ---------- 11. CHATBOT — fix "Online (bullet) Aviation Support" contrast ----------
+   This text is a span, so it was being caught by the generic
+   "span { color: var(--ink) }" rule in section 4 above, which put dark
+   navy text on the widget's dark navy header. Restored to white here. */
+.ff-chat-header, .ff-chat-header h3 {
+    color: #ffffff !important;
+}
+
+.ff-chat-status {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ff-chat-status .ff-dot {
+    background: #35d07f;
+    box-shadow: 0 0 0 3px rgba(53, 208, 127, 0.25);
+}
+
+/* ---------- 12. WORLDWIDE AIRPORT SEARCH DROPDOWN ----------
+   Powers the Departure/Destination fields on the "Make a Booking Inquiry"
+   forms (home page + contact page). Reuses .inquiry-field input styling
+   for the visible text field so it stays visually identical to every
+   other field in the form; only the dropdown panel itself is new. */
+.airport-select {
+    position: relative;
+}
+
+.airport-select-input {
+    padding-right: 42px !important;
+    cursor: text;
+}
+
+.airport-select-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: var(--ink-faint);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.airport-select-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid var(--border-soft-2);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.airport-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .18s var(--ease);
+}
+
+.airport-option:hover,
+.airport-option.is-active {
+    background: var(--blue-100);
+}
+
+.airport-option-code {
+    flex-shrink: 0;
+    min-width: 44px;
+    text-align: center;
+    padding: 4px 6px;
+    border-radius: 8px;
+    background: var(--brand-gradient);
+    color: #ffffff !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.airport-option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.airport-option-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.airport-option-name mark {
+    background: var(--orange-100);
+    color: var(--orange-600);
+    border-radius: 3px;
+    padding: 0 1px;
+}
+
+.airport-option-meta {
+    font-size: 12.5px;
+    color: var(--ink-faint) !important;
+}
+
+.airport-select-empty {
+    padding: 16px 12px;
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--ink-faint);
+}
+
+/* Slim, unobtrusive scrollbar for the results panel */
+.airport-select-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.airport-select-panel::-webkit-scrollbar-thumb {
+    background: var(--border-soft-2);
+    border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+    .airport-select-panel {
+        max-height: 240px;
+    }
+}

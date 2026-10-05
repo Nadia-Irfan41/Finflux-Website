@@ -1,0 +1,246 @@
+/* =========================================================
+   SITE HERO — reusable hero component
+   Used identically on every page (About, Home, Services,
+   Projects, Contact, and any future page). Only the text
+   content inside .site-hero-content changes per page.
+   Background slideshow: 3 aviation photos, crossfading
+   continuously. Centered, premium, editorial layout.
+========================================================= */
+
+.site-hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 21vh 8% 0;
+    background: #eaf4fb;
+}
+
+/* Background photo slideshow wrapper — sits at the very back of the
+   hero's own stacking context. The image below is a fallback so the
+   very first slide is visible instantly, with zero blank flash. */
+.site-hero-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('hero-plane-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroSlideFade 15s infinite;
+}
+
+.slide-1 {
+    background-image: url('hero-plane-1.png');
+    animation-delay: 0s;
+}
+
+.slide-2 {
+    /* Swapped from the sunset/high-contrast tarmac shot to this brighter,
+       airier aviation photo — its large soft, near-white left side keeps
+       the headline reading clearly instead of competing with a busy sky. */
+    background-image: url('hero-bg-1.png');
+    animation-delay: 5s;
+}
+
+.slide-3 {
+    background-image: url('hero-plane-3.png');
+    animation-delay: 10s;
+}
+
+@keyframes heroSlideFade {
+    0%    { opacity: 0; }
+    6%    { opacity: 1; }
+    27%   { opacity: 1; }
+    34%   { opacity: 0; }
+    100%  { opacity: 0; }
+}
+
+/* Very light readability veil — a soft wash from the top so the
+   headline sits cleanly on the sky without hiding the photo. */
+.site-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .38) 0%, rgba(255, 255, 255, .16) 32%, rgba(255, 255, 255, 0) 55%);
+}
+
+.site-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.site-hero-content h1 {
+    color: var(--navy-800, #0a2038);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+}
+
+/* Headline stays a single uniform dark tone — no accent color split */
+.site-hero-content h1 .text-orange {
+    color: inherit;
+}
+
+/* Underline accent removed for the cleaner editorial look */
+.site-hero-underline {
+    display: none;
+}
+
+.site-hero-content p {
+    color: var(--ink-soft, #4a5a6b);
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0 0 34px;
+    max-width: 620px;
+}
+
+.site-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
+    padding: 17px 38px;
+    background: transparent;
+    color: var(--navy-800, #0a2038);
+    text-decoration: none;
+    border: 1.5px solid var(--navy-800, #0a2038);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    transition: background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+.site-hero-btn span {
+    white-space: nowrap;
+}
+
+.site-hero-btn:hover {
+    background: var(--navy-800, #0a2038);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 42px rgba(10, 32, 56, .25);
+}
+
+/* Decorative wave lines removed — full, uninterrupted photo like the
+   reference hero, blending straight into the next section. */
+.site-hero-wave,
+.site-hero-divider {
+    display: none;
+}
+
+/* Scroll indicator — injected by hero-bg-rotator.js */
+.site-hero-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--navy-800, #0a2038);
+    opacity: .75;
+}
+
+.site-hero-scroll .mouse {
+    width: 24px;
+    height: 38px;
+    border: 1.5px solid currentColor;
+    border-radius: 14px;
+    position: relative;
+}
+
+.site-hero-scroll .mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: translateX(-50%);
+    animation: scrollDotMove 1.8s infinite;
+}
+
+.site-hero-scroll i {
+    font-size: 12px;
+    animation: scrollDotMove 1.8s infinite;
+}
+
+@keyframes scrollDotMove {
+    0%   { opacity: 0; transform: translate(-50%, 0); }
+    30%  { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 10px); }
+}
+
+/* Responsive */
+@media(max-width:992px) {
+    .site-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .site-hero-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:768px) {
+    .site-hero {
+        min-height: 640px;
+        padding: 150px 6% 0;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .site-hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .site-hero-content p {
+        margin: 0 auto 28px;
+        font-size: 15px;
+    }
+
+    .site-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .site-hero-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+}

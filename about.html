@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FinFlux </title>
+    <meta name="description"
+        content="FinFlux Group (Private) Limited — our story, values, mission and vision behind our aviation & industrial solutions.">
+
+    <!-- Brand typography: Poppins for display, Inter for body (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="global-consistency.css">
+</head>
+
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="siteHeader">
+
+        <div class="logo">
+            <img src="logo.jpeg" alt="FinFlux Group Logo">
+            <h2>FinFlux </h2>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active-link">About</a>
+            <a href="service.html">Services</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="contact.html" class="btn"><span class="btn-slide" data-label="Get In Touch">Get In Touch</span></a>
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</div>
+        </div>
+
+    </header>
+
+    <!-- ============ ABOUT HERO (shared hero component) ============ -->
+    <section class="site-hero">
+
+        <div class="site-hero-bg-wrap">
+            <div class="hero-bg-slide slide-1"></div>
+            <div class="hero-bg-slide slide-2"></div>
+            <div class="hero-bg-slide slide-3"></div>
+        </div>
+        <div class="site-hero-overlay"></div>
+
+        <div class="site-hero-content">
+
+            <h1 data-reveal="up">Connecting Aviation.<br>
+                <span class="text-orange">Powering</span> Global Trade.</h1>
+
+            <div class="site-hero-underline" data-reveal="up"></div>
+
+            <p data-reveal="up" class="stagger-1">
+                FinFlux is a forward-thinking aviation and logistics company
+                delivering reliable transportation, aircraft support services,
+                cross-border trade, imports, and strategic business solutions.
+                We connect industries through innovation, operational excellence,
+                and trusted partnerships, creating sustainable value for clients
+                across regional and international markets.
+            </p>
+
+            <a href="#about-company" class="site-hero-btn stagger-2" data-reveal="up">
+                <span class="btn-slide" data-label="Discover More">Discover More</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="site-hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1536 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,150 C300,210 500,90 820,140 C1100,185 1300,110 1536,160" fill="none" stroke="rgba(0,129,204,0.18)" stroke-width="2"/>
+                <path d="M0,180 C280,230 520,150 800,185 C1080,220 1320,150 1536,195" fill="none" stroke="rgba(238,109,0,0.35)" stroke-width="2"/>
+                <path d="M0,205 C320,250 560,190 840,215 C1120,240 1340,190 1536,215" fill="none" stroke="rgba(0,129,204,0.12)" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="site-hero-divider">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,90 L0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,90 Z" fill="var(--bg)"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <section class="journey-section" id="about-company">
+
+        <div class="journey-container">
+
+            <div class="journey-intro">
+                <div class="journey-dash" data-reveal="up"></div>
+                <h2 data-reveal="up" class="stagger-1">OUR <span class="text-orange">JOURNEY</span></h2>
+                <p class="journey-tagline stagger-2" data-reveal="up">Connecting Skies. Delivering Global Excellence.</p>
+                <div class="journey-dash" data-reveal="up"></div>
+                <p class="journey-desc stagger-3" data-reveal="up">
+                    FinFlux was established with a vision to strengthen the aviation, transportation,
+                    and logistics industry by providing reliable solutions for aircraft support,
+                    global trade, imports, and cross-border operations.
+                </p>
+            </div>
+
+            <div class="journey-carousel">
+                <div class="journey-viewport">
+                    <div class="journey-track" id="journeyTrack">
+
+                        <div class="journey-card">
+                            <div class="journey-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <span class="journey-num">01.</span>
+                            <h3>OUR BEGINNING</h3>
+                            <p>
+                                From the beginning, our commitment has been to deliver
+                                safe, efficient, and innovative services that meet
+                                international standards.
+                            </p>
+                        </div>
+
+                        <div class="journey-card">
+                            <div class="journey-icon"><i class="fa-solid fa-globe"></i></div>
+                            <span class="journey-num">02.</span>
+                            <h3>EXPANSION &amp; GROWTH</h3>
+                            <p>
+                                As our operations expanded, we diversified into aviation
+                                logistics, aircraft spare parts, cargo transportation, import and
+                                export services, and strategic supply chain solutions.
+                            </p>
+                        </div>
+
+                        <div class="journey-card">
+                            <div class="journey-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <span class="journey-num">03.</span>
+                            <h3>TRUST &amp; EXCELLENCE</h3>
+                            <p>
+                                Through trusted partnerships and advanced operational
+                                practices, we have built a strong reputation for quality,
+                                reliability, and customer satisfaction.
+                            </p>
+                        </div>
+
+                        <div class="journey-card">
+                            <div class="journey-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <span class="journey-num">04.</span>
+                            <h3>TODAY &amp; BEYOND</h3>
+                            <p>
+                                FinFlux continues to grow as a trusted aviation and logistics
+                                partner, connecting businesses across borders through innovative
+                                transportation solutions, operational excellence, and a commitment
+                                to sustainable growth in the global aviation industry.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="journey-nav">
+                    <button class="journey-arrow" id="journeyPrev" aria-label="Previous">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="journey-dots" id="journeyDots">
+                        <span class="journey-dot active" data-index="0"></span>
+                        <span class="journey-dot" data-index="1"></span>
+                        <span class="journey-dot" data-index="2"></span>
+                        <span class="journey-dot" data-index="3"></span>
+                    </div>
+                    <button class="journey-arrow" id="journeyNext" aria-label="Next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="journey-carousel.js"></script>
+
+    <section class="values-section">
+
+        <div class="values-bg" aria-hidden="true">
+            <img src="values-bg.png" alt="">
+        </div>
+
+        <div class="values-heading">
+
+            <span data-reveal="up">OUR VALUES</span>
+
+            <h2 data-reveal="up" class="stagger-1">What Drives<br><span class="text-blue">Our Success</span></h2>
+
+            <p data-reveal="up" class="stagger-2">
+                At FinFlux, our values define how we operate across aviation,
+                logistics, transportation, and global trade. They inspire every
+                partnership, every operation, and every commitment we make to our clients.
+            </p>
+
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-card" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Customer First</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Customer First</h3>
+                        <p>
+                            We prioritize our customers by delivering reliable aviation,
+                            logistics, and transportation solutions tailored to their
+                            operational and business needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card stagger-1" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Operational Excellence</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Operational Excellence</h3>
+                        <p>
+                            We maintain the highest standards of quality, efficiency,
+                            and precision to ensure safe and dependable services across
+                            every operation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card stagger-2" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Transparent Communication</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Transparent Communication</h3>
+                        <p>
+                            We believe in open communication, timely updates, and
+                            honest collaboration, building lasting relationships
+                            with our clients and partners.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3>Safety & Compliance</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3>Safety & Compliance</h3>
+                        <p>
+                            Safety comes first in everything we do. We strictly follow
+                            international aviation standards and industry regulations
+                            to ensure secure and reliable operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card stagger-1" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Innovation & Growth</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Innovation & Growth</h3>
+                        <p>
+                            By embracing modern technologies and continuous improvement,
+                            we create smarter logistics solutions and support sustainable
+                            business growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card stagger-2" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-users"></i>
+                        <h3>Strong Partnerships</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-users"></i>
+                        <h3>Strong Partnerships</h3>
+                        <p>
+                            We work closely with airlines, suppliers, manufacturers,
+                            and global partners to deliver efficient and dependable
+                            aviation services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-card" data-reveal="up">
+                <div class="value-card-inner">
+                    <div class="value-card-face value-card-front">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Integrity & Reliability</h3>
+                        <span class="flip-hint"><i class="fa-solid fa-arrows-rotate"></i> Hover to explore</span>
+                    </div>
+                    <div class="value-card-face value-card-back">
+                        <span class="value-glow"></span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Integrity & Reliability</h3>
+                        <p>
+                            Integrity, accountability, and trust are at the heart of
+                            every relationship, ensuring confidence in every service
+                            we provide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="values-footer">
+
+            <span class="values-footer-icon"><i class="fa-solid fa-people-group"></i></span>
+
+            <p data-reveal="up">
+                These values guide FinFlux Group in delivering safe aviation
+                services, efficient logistics, and trusted global trade
+                solutions while creating lasting value for customers,
+                partners, and communities worldwide.
+            </p>
+
+            <i class="fa-solid fa-plane values-footer-plane"></i>
+
+        </div>
+
+        <div class="hero-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,90 L0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,90 Z" fill="var(--bg)"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <section class="mission-section">
+
+        <div class="mission-bg" aria-hidden="true">
+            <img src="mission-bg.png" alt="">
+        </div>
+
+        <div class="mission-container">
+
+            <div class="mission-grid">
+
+                <!-- Left Side -->
+
+                <div class="mission-content" data-reveal="left">
+
+                    <span class="mission-tag">OUR MISSION</span>
+
+                    <h2>Why We <span class="text-blue">Fly Forward</span></h2>
+
+                    <h3>Connecting Aviation with Global Trade & Innovation</h3>
+
+                    <p>
+                        The aviation and logistics industry is evolving rapidly, driven by
+                        technological advancements, increasing global trade, and the growing
+                        demand for faster, safer, and more efficient transportation solutions.
+                        Businesses today require reliable partners capable of delivering
+                        seamless operations across international markets.
+                    </p>
+
+                    <p>
+                        FinFlux is committed to meeting these challenges through
+                        innovative aviation services, logistics solutions, aircraft support,
+                        cross-border trade, and strategic partnerships. By combining
+                        operational excellence with modern technology, we help businesses
+                        move people, products, and opportunities across the world.
+                    </p>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="mission-box" data-reveal="right">
+
+                    <div class="mission-box-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>Our Mission</h3>
+                    <div class="mission-line-accent"></div>
+
+                    <p>
+                        To deliver <strong>safe, reliable,</strong> and <strong>innovative</strong> aviation and logistics
+                        solutions that <strong>connect businesses</strong>, strengthen
+                        <strong>global trade</strong>, and drive <strong>sustainable growth</strong> through
+                        excellence and trusted partnerships.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="mission-categories" data-reveal="up">
+
+                <div class="mission-cat-item">
+                    <i class="fa-solid fa-plane"></i>
+                    <span>Aviation Services</span>
+                    <div class="mc-underline"></div>
+                </div>
+
+                <div class="mission-cat-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Cargo & Logistics</span>
+                    <div class="mc-underline"></div>
+                </div>
+
+                <div class="mission-cat-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Aircraft Parts & Manufacturing</span>
+                    <div class="mc-underline"></div>
+                </div>
+
+                <div class="mission-cat-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Global Trade & Imports</span>
+                    <div class="mc-underline"></div>
+                </div>
+
+                <div class="mission-cat-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Strategic Partnerships</span>
+                    <div class="mc-underline"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mission-section-spacer"></div>
+
+    </section>
+
+    <section class="our-vision-section">
+
+        <div class="our-vision-bg" aria-hidden="true">
+            <img src="vision-bg.png" alt="">
+        </div>
+
+        <div class="our-vision-container">
+
+            <div class="our-vision-content" data-reveal="left">
+
+                <div class="our-vision-tag">
+                    <span>OUR VISION</span>
+                    <span class="ov-tag-line"></span>
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+
+                <h2 class="our-vision-heading">
+                    Shaping the Future of<br>
+                    Aviation & <span class="text-orange">Global Logistics</span>
+                </h2>
+
+                <div class="our-vision-divider"></div>
+
+                <p>
+                    The future of aviation depends on innovation, efficiency, and
+                    seamless global connectivity. As international trade continues to
+                    expand, businesses require trusted partners capable of delivering
+                    safe aviation services, reliable logistics, and integrated supply
+                    chain solutions that connect markets across the world.
+                </p>
+
+                <p>
+                    FinFlux is committed to becoming a leading force in aviation,
+                    transportation, logistics, aircraft support, manufacturing, and
+                    cross-border trade. Through advanced technologies, operational
+                    excellence, and strong global partnerships, we strive to create
+                    smarter and more sustainable solutions for the aviation industry.
+                </p>
+
+                <div class="our-vision-grid">
+
+                    <div class="ov-item">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <h3>Global Connectivity</h3>
+                        <p>Connecting markets across the world</p>
+                    </div>
+
+                    <div class="ov-item">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3>Operational Excellence</h3>
+                        <p>Delivering efficient & reliable solutions</p>
+                    </div>
+
+                    <div class="ov-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Safety & Reliability</h3>
+                        <p>Commitment to the highest standards</p>
+                    </div>
+
+                    <div class="ov-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>Sustainable Future</h3>
+                        <p>Building smarter & greener solutions</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,90 L0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,90 Z" fill="var(--bg)"></path>
+            </svg>
+        </div>
+
+    </section>
+    <!-- ================= TEAM SECTION ================= -->
+    <section class="team-section" id="our-team">
+
+        <div class="team-container">
+
+            <div class="team-heading">
+                <span class="history-tag" data-reveal="up">OUR TEAM</span>
+                <h2 data-reveal="up" class="stagger-1">Meet the Experts<br>Behind <span class="text-blue">FinFlux</span></h2>
+                <div class="history-line"></div>
+
+                <p data-reveal="up" class="stagger-2">
+                    Our dedicated professionals bring years of expertise in aviation,
+                    logistics, transportation, and global trade. Together, we work to
+                    deliver innovative solutions while maintaining the highest standards
+                    of quality, safety, and customer satisfaction.
+                </p>
+            </div>
+
+            <div class="team-grid">
+ <!-- Member 1 -->
+                <div class="team-card stagger-1" data-reveal="up">
+                    <div class="team-photo-wrap">
+                        <div class="team-photo"><img src="team2.jpeg" alt="Operations Manager"></div>
+                    </div>
+                    <h3>Team Member One</h3>
+                    <span class="team-role">Director/CEO</span>
+                    <p>
+                        Leads FinFlux with a vision of innovation, operational excellence,
+                        and sustainable business growth.
+                    </p>
+                </div>
+                <!-- Member 2 -->
+                <div class="team-card stagger-2" data-reveal="up">
+                    <div class="team-photo-wrap">
+                        <div class="team-photo"><img src="team1.jpeg" alt="CEO"></div>
+                    </div>
+                    <h3>Team Member Two</h3>
+                    <span class="team-role">Resident Director</span>
+                    <p>
+                       
+                         Oversees transportation, logistics, and supply chain operations,
+                        ensuring smooth and efficient service delivery.
+                    </p>
+                </div>
+
+               
+                <!-- Member 3 -->
+                <div class="team-card stagger-3" data-reveal="up">
+                    <div class="team-photo-wrap">
+                        <div class="team-photo"><img src="team3.jpeg" alt="Aviation Specialist"></div>
+                    </div>
+                    <h3>Team Member Three</h3>
+                    <span class="team-role">Director/Company Secretary</span>
+                    <p>
+                        Specializes in aircraft support, aviation logistics,
+                        and international compliance standards.
+                    </p>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card stagger-4" data-reveal="up">
+                    <div class="team-photo-wrap">
+                        <div class="team-photo"><img src="team4.jpeg" alt="Business Development"></div>
+                    </div>
+                    <h3>Team Member Four</h3>
+                    <span class="team-role">Chief Technology Officer</span>
+                    <p>
+                        Builds strategic partnerships and drives global business
+                        expansion across international markets.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <a href="https://wa.me/920000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============ FOOTER ============ -->
+
+
+<footer class="footer">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-4.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--navy"></div>
+
+        <div class="footer-container">
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h2 class="footer-logo">FinFlux</h2>
+                <p>
+                    A trusted aviation partner delivering innovative aviation solutions, operational excellence, and
+                    strategic support across global markets, connecting businesses through safe, efficient, and reliable
+                    services.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="service.html#transportation">Transportation</a></li>
+                    <li><a href="service.html#cargo">Cargo Solutions</a></li>
+                    <li><a href="service.html#spare-parts">Aircraft Spare Parts</a></li>
+                    <li><a href="service.html#cross-border">Cross-Border Transactions</a></li>
+                    <li><a href="service.html#imports">Import Services</a></li>
+                    <li><a href="service.html#manufacturing">Manufacturing</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 FinFlux. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- Fixed decorative flight-path scroll indicator -->
+    <div class="flight-track" id="flightTrack" aria-hidden="true">
+        <div class="rail"></div>
+        <div class="plane-marker"><i class="fa-solid fa-location-arrow"></i></div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="values-interactive.js"></script>
+
+    <script src="hero-bg-rotator.js"></script>
+</body>
+
+</html>

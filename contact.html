@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | FinFlux </title>
+    <meta name="description"
+        content="Get in touch with FinFlux Group (Private) Limited — aircraft operations, aviation consultancy, and strategic aviation partnerships worldwide.">
+
+    <!-- Brand typography: Poppins for display, Inter for body (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="global-consistency.css">
+</head>
+
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="siteHeader">
+
+        <div class="logo">
+            <img src="logo.jpeg" alt="FinFlux Group Logo">
+            <h2>FinFlux </h2>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html" class="active-link">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="contact.html" class="btn"><span class="btn-slide" data-label="Get In Touch">Get In Touch</span></a>
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</div>
+        </div>
+
+    </header>
+
+    <!-- ============ CONTACT HERO (shared hero component) ============ -->
+    <section class="site-hero">
+
+        <div class="site-hero-bg-wrap">
+            <div class="hero-bg-slide slide-1"></div>
+            <div class="hero-bg-slide slide-2"></div>
+            <div class="hero-bg-slide slide-3"></div>
+        </div>
+        <div class="site-hero-overlay"></div>
+
+        <div class="site-hero-content">
+
+            <h1 data-reveal="up">Let's Build the<br>
+                <span class="text-orange">Future</span> Together.</h1>
+
+            <div class="site-hero-underline" data-reveal="up"></div>
+
+            <p data-reveal="up" class="stagger-1">
+                Whether you need reliable transportation, cargo and aircraft spare
+                parts, cross-border transaction support, import solutions, or
+                manufacturing services, our team is ready to assist. Connect with
+                FinFlux Group and discover reliable solutions designed to support
+                your business across regional and international markets.
+            </p>
+
+            <a href="#contact-section" class="site-hero-btn stagger-2" data-reveal="up">
+                <span class="btn-slide" data-label="Discover More">Discover More</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="site-hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1536 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,150 C300,210 500,90 820,140 C1100,185 1300,110 1536,160" fill="none" stroke="rgba(0,129,204,0.18)" stroke-width="2"/>
+                <path d="M0,180 C280,230 520,150 800,185 C1080,220 1320,150 1536,195" fill="none" stroke="rgba(238,109,0,0.35)" stroke-width="2"/>
+                <path d="M0,205 C320,250 560,190 840,215 C1120,240 1340,190 1536,215" fill="none" stroke="rgba(0,129,204,0.12)" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="site-hero-divider">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,90 L0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,90 Z" fill="var(--bg)"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <!-- ============ FLIGHT INQUIRY ============ -->
+    <section class="inquiry-section" id="inquiry">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-2.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="bg-animation" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="inquiry-container">
+
+            <div class="inquiry-heading">
+                <span class="subtitle" data-reveal="up">MAKE A BOOKING INQUIRY</span>
+                <h2 class="stagger-1" data-reveal="up">Plan Your Next Move With FinFlux</h2>
+                <p class="stagger-2" data-reveal="up">
+                    Tell us what you're moving — people or cargo — and our team will
+                    get back to you with a tailored aviation solution.
+                </p>
+            </div>
+
+            <div class="inquiry-card" data-reveal="up">
+
+                <div class="inquiry-toggle">
+                    <button type="button" class="inquiry-toggle-btn active" data-type="passenger"
+                        aria-selected="true">
+                        <i class="fa-solid fa-person"></i> Passenger
+                    </button>
+                    <button type="button" class="inquiry-toggle-btn" data-type="cargo" aria-selected="false">
+                        <i class="fa-solid fa-box"></i> Cargo
+                    </button>
+                    <span class="inquiry-toggle-indicator" aria-hidden="true"></span>
+                </div>
+
+                <form class="inquiry-form" id="inquiryForm" autocomplete="off">
+
+                    <div class="inquiry-fields" data-fields="passenger">
+                        <div class="inquiry-field">
+                            <label for="pDeparture">Departure</label>
+                            <div class="airport-select" data-airport-select>
+                                <input type="text" id="pDeparture" class="airport-select-input"
+                                    placeholder="Search city or airport" autocomplete="off" role="combobox"
+                                    aria-expanded="false" aria-autocomplete="list" required>
+                                <input type="hidden" class="airport-select-value" name="departure">
+                                <i class="fa-solid fa-magnifying-glass airport-select-icon"></i>
+                                <div class="airport-select-panel" role="listbox" hidden></div>
+                            </div>
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="pDestination">Destination</label>
+                            <div class="airport-select" data-airport-select>
+                                <input type="text" id="pDestination" class="airport-select-input"
+                                    placeholder="Search city or airport" autocomplete="off" role="combobox"
+                                    aria-expanded="false" aria-autocomplete="list" required>
+                                <input type="hidden" class="airport-select-value" name="destination">
+                                <i class="fa-solid fa-magnifying-glass airport-select-icon"></i>
+                                <div class="airport-select-panel" role="listbox" hidden></div>
+                            </div>
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="pDate">Date</label>
+                            <input type="date" id="pDate" name="date" required>
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="pPassengers">Number of Passengers</label>
+                            <input type="number" id="pPassengers" name="passengers" min="1" placeholder="e.g. 4"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="inquiry-fields" data-fields="cargo" hidden>
+                        <div class="inquiry-field">
+                            <label for="cDeparture">Departure</label>
+                            <div class="airport-select" data-airport-select>
+                                <input type="text" id="cDeparture" class="airport-select-input"
+                                    placeholder="Search city or airport" autocomplete="off" role="combobox"
+                                    aria-expanded="false" aria-autocomplete="list">
+                                <input type="hidden" class="airport-select-value" name="departure">
+                                <i class="fa-solid fa-magnifying-glass airport-select-icon"></i>
+                                <div class="airport-select-panel" role="listbox" hidden></div>
+                            </div>
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="cDestination">Destination</label>
+                            <div class="airport-select" data-airport-select>
+                                <input type="text" id="cDestination" class="airport-select-input"
+                                    placeholder="Search city or airport" autocomplete="off" role="combobox"
+                                    aria-expanded="false" aria-autocomplete="list">
+                                <input type="hidden" class="airport-select-value" name="destination">
+                                <i class="fa-solid fa-magnifying-glass airport-select-icon"></i>
+                                <div class="airport-select-panel" role="listbox" hidden></div>
+                            </div>
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="cDate">Date</label>
+                            <input type="date" id="cDate" name="date">
+                        </div>
+                        <div class="inquiry-field">
+                            <label for="cWeight">Weight (Tons)</label>
+                            <input type="number" id="cWeight" name="weight" min="1" placeholder="e.g. 500">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="inquiry-submit">
+                        <span class="btn-slide" data-label="Inquire Now">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ CONTACT DETAILS + FORM ============ -->
+    <section class="contact-form-section" id="contact-section">
+
+        <div class="svc-bg-image" style="background-image:url('about-hero-bg-3.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--light"></div>
+
+        <div class="bg-animation" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="contact-form-container">
+
+            <!-- Left: details -->
+            <div class="contact-details" data-reveal="left">
+
+                <span class="contact-subtitle">CONTACT DETAILS</span>
+
+                <h2>We're Ready to Assist You</h2>
+
+                <p class="contact-lede">
+                    Have questions about our transportation services, cargo and aircraft
+                    spare parts, cross-border transactions, import solutions, or
+                    manufacturing services? Reach out and our team will respond as soon
+                    as possible.
+                </p>
+
+                <div class="contact-card" data-reveal="up">
+                    <div class="contact-icon"><i class="fa-solid fa-building"></i></div>
+                    <div>
+                        <h4>Pakistan Office</h4>
+                        <p>
+                           City,
+                            Country
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Right: glass form -->
+            <div class="contact-form-wrap" data-reveal="right">
+
+                <div class="form-heading">
+                    <span>CONTACT FORM</span>
+                    <h2>Request Aviation &amp; Business Solutions</h2>
+                    <p>
+                        Send us your inquiry below and a FinFlux representative will
+                        get back to you shortly.
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+
+                    <div class="input-group">
+                        <label for="fullName">Name *</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email *</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Contact Number</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your contact number">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Subject *</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-tag"></i>
+                            <input type="text" id="subject" name="subject"
+                                placeholder="Transportation, Imports, Cargo..." required>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="message">Your Inquiry *</label>
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Tell us about your transportation, cargo, aircraft spare parts, import, cross-border transaction, or manufacturing requirements..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Please complete all required fields before submitting your inquiry. Our team will review
+                        your
+                        request and contact you promptly.
+                    </div>
+
+                    <button type="submit" class="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i> <span class="btn-slide" data-label="Send Inquiry">Send Inquiry</span>
+                    </button>
+
+                    <p id="successMessage" class="success-message">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Thank you! Your inquiry has been received successfully. A FinFlux representative will
+                        contact
+                        you
+                        shortly.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/920000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============ FOOTER ============ -->
+
+
+<footer class="footer">
+
+        <div class="svc-bg-image" style="background-image:url('hero-bg-4.png');"></div>
+        <div class="svc-bg-overlay svc-bg-overlay--navy"></div>
+
+        <div class="footer-container">
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h2 class="footer-logo">FinFlux</h2>
+                <p>
+                    A trusted aviation partner delivering innovative aviation solutions, operational excellence, and
+                    strategic support across global markets, connecting businesses through safe, efficient, and reliable
+                    services.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="service.html#transportation">Transportation</a></li>
+                    <li><a href="service.html#cargo">Cargo Solutions</a></li>
+                    <li><a href="service.html#spare-parts">Aircraft Spare Parts</a></li>
+                    <li><a href="service.html#cross-border">Cross-Border Transactions</a></li>
+                    <li><a href="service.html#imports">Import Services</a></li>
+                    <li><a href="service.html#manufacturing">Manufacturing</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 FinFlux. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- Fixed decorative flight-path scroll indicator (see index.js) -->
+    <div class="flight-track" id="flightTrack" aria-hidden="true">
+        <div class="rail"></div>
+        <div class="plane-marker"><i class="fa-solid fa-location-arrow"></i></div>
+    </div>
+
+    <script src="airports-data.js"></script>
+    <script src="airport-select.js"></script>
+    <script src="index.js"></script>
+
+    <script>
+        (function () {
+            "use strict";
+            // TODO: replace with the real inbox that should receive contact-
+            // form messages. This is a placeholder address — until it's
+            // swapped for a real one (and confirmed, see note below), no
+            // email will actually arrive anywhere.
+            var FINFLUX_CONTACT_EMAIL = "info@example.com";
+
+            var form = document.getElementById("contactForm");
+            var successMessage = document.getElementById("successMessage");
+            var sendBtn = form.querySelector(".send-btn");
+            var sendBtnLabel = sendBtn ? sendBtn.querySelector(".btn-slide") : null;
+            var originalLabel = sendBtnLabel ? sendBtnLabel.textContent : "Send Inquiry";
+            var hideTimer = null;
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+                if (sendBtn && sendBtn.disabled) return;
+
+                var payload = {
+                    _subject: "New Contact Form Inquiry — FinFlux",
+                    "Name": document.getElementById("fullName").value,
+                    "Email": document.getElementById("email").value,
+                    "Contact Number": document.getElementById("phone").value,
+                    "Subject": document.getElementById("subject").value,
+                    "Message": document.getElementById("message").value
+                };
+
+                if (sendBtn) sendBtn.disabled = true;
+                if (sendBtnLabel) sendBtnLabel.textContent = "Sending...";
+
+                fetch("https://formsubmit.co/ajax/" + FINFLUX_CONTACT_EMAIL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(payload)
+                })
+                    .then(function (res) {
+                        if (!res.ok) throw new Error("Request failed");
+                        form.reset();
+                        successMessage.classList.add("is-shown");
+
+                        if (hideTimer) clearTimeout(hideTimer);
+                        hideTimer = setTimeout(function () {
+                            successMessage.classList.remove("is-shown");
+                        }, 4000);
+                    })
+                    .catch(function () {
+                        if (sendBtnLabel) sendBtnLabel.textContent = "Failed — Try Again";
+                    })
+                    .finally(function () {
+                        window.setTimeout(function () {
+                            if (sendBtn) sendBtn.disabled = false;
+                            if (sendBtnLabel) sendBtnLabel.textContent = originalLabel;
+                        }, 2200);
+                    });
+            });
+        })();
+    </script>
+
+    <script src="hero-bg-rotator.js"></script>
+</body>
+
+</html>

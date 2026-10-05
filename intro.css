@@ -1,0 +1,318 @@
+/* ============ FinFlux Intro Animation (Aviation Background) ============ */
+#ffIntro {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    max-height: 100vh;
+    max-height: 100svh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #04101f;
+}
+
+#ffIntro .ff-intro-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    z-index: 0;
+}
+
+/* Subtle dark/blue overlay so text stays readable, background stays visible */
+#ffIntro .ff-intro-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(3, 10, 22, 0.55) 0%, rgba(3, 10, 22, 0.30) 32%, rgba(3, 10, 22, 0.42) 68%, rgba(3, 10, 22, 0.72) 100%),
+        radial-gradient(ellipse 900px 600px at 50% 46%, rgba(4, 12, 26, 0.15) 0%, rgba(4, 12, 26, 0.55) 75%);
+    pointer-events: none;
+}
+
+#ffIntro .ff-intro-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 0 24px;
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    animation: ffIntroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    text-align: center;
+}
+
+#ffIntro .ff-intro-name {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(42px, 9vw, 96px);
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    display: flex;
+    text-shadow:
+        0 0 30px rgba(28, 155, 224, 0.45),
+        0 0 70px rgba(238, 109, 0, 0.25),
+        0 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+#ffIntro .ff-intro-name span {
+    display: inline-block;
+    opacity: 0;
+    animation: ffLetterIn 0.6s ease forwards;
+}
+
+#ffIntro .ff-intro-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: clamp(13px, 2.4vw, 19px);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #ffd9b0;
+    text-shadow: 0 0 18px rgba(238, 109, 0, 0.5), 0 2px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: ffIntroIn 0.7s ease 0.95s forwards;
+    margin-bottom: 6px;
+}
+
+/* ---- Flight path loading animation ---- */
+#ffIntro .ff-loader {
+    position: relative;
+    width: min(260px, 62vw);
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: ffIntroIn 0.7s ease 1.3s forwards;
+}
+
+#ffIntro .ff-loader-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(28, 155, 224, 0) 0%, rgba(28, 155, 224, 0.7) 15%, rgba(238, 109, 0, 0.7) 85%, rgba(238, 109, 0, 0) 100%);
+}
+
+#ffIntro .ff-loader-plane {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    filter: drop-shadow(0 0 8px rgba(28, 155, 224, 0.85));
+    transform: translate(-50%, -50%) rotate(90deg);
+    animation: ffPlaneTravel 2.1s ease-in-out infinite;
+}
+
+@keyframes ffPlaneTravel {
+    0% {
+        left: 2%;
+        opacity: 0;
+        filter: drop-shadow(0 0 8px rgba(28, 155, 224, 0.85));
+    }
+    10% { opacity: 1; }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(255, 190, 140, 0.9));
+    }
+    90% { opacity: 1; }
+    100% {
+        left: 98%;
+        opacity: 0;
+        filter: drop-shadow(0 0 8px rgba(238, 109, 0, 0.9));
+    }
+}
+
+#ffIntro .ff-loading-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    animation: ffIntroIn 0.7s ease 1.5s forwards;
+}
+
+#ffIntro .ff-loading-text .ff-dot {
+    display: inline-block;
+    opacity: 0.2;
+    animation: ffDotBlink 1.4s ease-in-out infinite;
+}
+
+#ffIntro .ff-loading-text .ff-dot:nth-child(2) { animation-delay: 0.2s; }
+#ffIntro .ff-loading-text .ff-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes ffDotBlink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* Exit animation: fade + zoom into homepage */
+#ffIntro.ff-intro-exit {
+    animation: ffIntroOut 0.85s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+    pointer-events: none;
+}
+
+@keyframes ffIntroIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes ffLetterIn {
+    to { opacity: 1; }
+}
+
+@keyframes ffIntroOut {
+    to {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+}
+
+html.ff-intro-active,
+body.ff-intro-active {
+    overflow: hidden !important;
+    height: 100%;
+    width: 100%;
+    overscroll-behavior: none;
+}
+
+@media (max-width: 640px) {
+    #ffIntro .ff-intro-inner { gap: 10px; }
+    #ffIntro .ff-intro-tagline { letter-spacing: 0.22em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #ffIntro .ff-intro-inner,
+    #ffIntro .ff-intro-name span,
+    #ffIntro .ff-intro-tagline,
+    #ffIntro .ff-loader,
+    #ffIntro .ff-loading-text {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    #ffIntro .ff-loader-plane { animation: none; left: 50%; opacity: 1; }
+}
+
+/* =====================================================================
+   UNIVERSAL CARD ENTRANCE — 180° 3D flip + orange -> blue -> white
+   color sweep. Applied by index.js to every card type site-wide.
+   Purely additive: only fires while the class is present, then the
+   card's own existing styling/hover/layout takes back over untouched.
+   ===================================================================== */
+.card-3d-reveal {
+    animation: card3DFlipColor 1.15s cubic-bezier(.45, .05, .35, 1) both;
+    will-change: transform, box-shadow;
+}
+
+@keyframes card3DFlipColor {
+    0% {
+        opacity: 0;
+        transform: perspective(1400px) rotateY(-180deg);
+        box-shadow: 0 0 0 0 rgba(238, 109, 0, 0);
+    }
+
+    28% {
+        opacity: 1;
+        box-shadow: 0 0 40px 8px rgba(255, 180, 120, .32);
+    }
+
+    60% {
+        transform: perspective(1400px) rotateY(-12deg);
+        box-shadow: 0 0 40px 8px rgba(140, 205, 245, .3);
+    }
+
+    82% {
+        box-shadow: 0 0 30px 6px rgba(255, 255, 255, .4);
+    }
+
+    100% {
+        opacity: 1;
+        transform: perspective(1400px) rotateY(0deg);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-3d-reveal {
+        animation: none;
+    }
+}
+
+/* =====================================================================
+   AMBIENT CARD BUBBLES — soft light-tinted circles drifting upward
+   inside every card, cycling orange -> blue -> white. Purely
+   decorative and non-interactive; layered behind each card's own
+   content so nothing else is disturbed.
+   ===================================================================== */
+.feature-card,
+.contact-card,
+.value-card,
+.team-card,
+.chairman-card,
+.vision-mission-card,
+.project-card,
+.blog-card,
+.category-card,
+.location-card {
+    position: relative;
+}
+
+.card-bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.card-bubble {
+    position: absolute;
+    bottom: -24px;
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(.5px);
+    animation: cardBubbleFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardBubbleFloat {
+    0% {
+        transform: translateY(0) scale(.6);
+        opacity: 0;
+    }
+
+    18% {
+        opacity: .5;
+    }
+
+    55% {
+        opacity: .35;
+    }
+
+    100% {
+        transform: translateY(-170px) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-bubble {
+        animation: none;
+        display: none;
+    }
+}
